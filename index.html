@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <meta name="description" content="Portfolio of a student developer: projects, certificates and contact details.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="flower" viewBox="0 0 100 100">
+                <g fill="currentColor">
+                    <ellipse cx="50" cy="25" rx="11" ry="21"/>
+                    <ellipse cx="50" cy="25" rx="11" ry="21" transform="rotate(45 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="11" ry="21" transform="rotate(90 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="11" ry="21" transform="rotate(135 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="11" ry="21" transform="rotate(180 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="11" ry="21" transform="rotate(225 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="11" ry="21" transform="rotate(270 50 50)"/>
+                    <ellipse cx="50" cy="25" rx="11" ry="21" transform="rotate(315 50 50)"/>
+                </g>
+                <circle cx="50" cy="50" r="9" fill="#F3C969"/>
+            </symbol>
+        </defs>
+    </svg>
+
+    <a class="skip-link" href="#about">Skip to content</a>
+
+
+    <nav id="navbar">
+        <a class="logo" href="#home">
+            <svg class="logo-flower" aria-hidden="true"><use href="#flower"/></svg>
+            <span id="logoName">Princess Tabanyag</span>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
+        </button>
+
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Project &amp; Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    
+    <section id="home">
+        <canvas id="petals" aria-hidden="true"></canvas>
+
+        <div class="home-inner">
+            <div class="home-text">
+                <h1>Hi I'm <span class="your-name">Princess Tabanyag</span></h1>
+                <h3>Cavite State University | <span id="typed"></span><span class="cursor" aria-hidden="true">|</span></h3>
+                <p>I build web-based systems and creative projects, turning , working and useful applications.</p>
+                <div class="home-buttons">
+                    <a href="#projects" class="button">View My Work</a>
+                    <a href="#contact" class="button button-outline">Contact Me</a>
+                </div>
+            </div>
+
+            <div class="profile">
+                <svg class="flower-back" aria-hidden="true"><use href="#flower"/></svg>
+                <svg class="flower-back flower-back-2" aria-hidden="true"><use href="#flower"/></svg>
+                <div class="profile-photo">
+                    <img src="images/profile.jpg" alt="Profile photo of the portfolio owner">
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <section id="about">
+        <h1>About Me</h1>
+        <div class="divider" aria-hidden="true"><svg><use href="#flower"/></svg></div>
+        <p class="about-text">I am a student who enjoys programming, designing user-friendly interfaces and building systems that solve real problems. I like learning new tools and improving my projects step by step.</p>
+
+        <h2>Skills</h2>
+        <div class="skills" id="skills"></div>
+    </section>
+
+   
+    <section id="projects">
+        <h1>Projects</h1>
+        <div class="divider" aria-hidden="true"><svg><use href="#flower"/></svg></div>
+        <p class="hint">Select a card to read more.</p>
+        <div class="project-container" id="projectList"></div>
+
+        <h1 class="second-title">Certificates</h1>
+        <div class="divider" aria-hidden="true"><svg><use href="#flower"/></svg></div>
+        <div class="project-container" id="certList"></div>
+    </section>
+
+
+    <section id="contact">
+        <h1>Contact Me</h1>
+        <div class="divider" aria-hidden="true"><svg><use href="#flower"/></svg></div>
+
+        <div class="contact-wrap">
+            <div class="contact-info">
+                <p><strong>Email</strong><br><a id="emailLink" href="mailto:youremail@example.com">tabanyagprincess01@gmail.com</a></p>
+                <p><strong>Phone</strong><br><a id="phoneLink" href="tel:+000000000000">09358541312</a></p>
+                <p><strong>Location</strong><br><span id="locationText">Imus,Cavite,Philippines</span></p>
+            </div>
+
+            <form id="contactForm" novalidate>
+                <label for="cName">Name</label>
+                <input type="text" id="cName" name="name" autocomplete="name" required>
+                <small class="error" id="errName"></small>
+
+                <label for="cEmail">Email</label>
+                <input type="email" id="cEmail" name="email" autocomplete="email" required>
+                <small class="error" id="errEmail"></small>
+
+                <label for="cMessage">Message</label>
+                <textarea id="cMessage" name="message" rows="5" required></textarea>
+                <small class="error" id="errMessage"></small>
+
+                <button type="submit" class="button">Send Message</button>
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year">2026</span> <span class="your-name-footer">Your Name</span>. All rights reserved.</p>
+    </footer>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">&#8593;</button>
+
+    <dialog id="detailDialog">
+        <button class="dialog-close" id="dialogClose" aria-label="Close">&times;</button>
+        <h2 id="dialogTitle"></h2>
+        <p class="dialog-meta" id="dialogMeta"></p>
+        <img id="dialogImage" class="dialog-image" alt="" hidden>
+        <p id="dialogText"></p>
+        <div class="dialog-tags" id="dialogTags"></div>
+        <a class="button" id="dialogLink" href="#" target="_blank" rel="noopener" hidden>Open Link</a>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
